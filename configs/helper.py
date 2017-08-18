@@ -9,7 +9,7 @@ class Helper:
 	def __init__(self):
 		self.diccionario = {
 			'BASE_URL': 'http://localhost:5000/',
-			'STATICS_URL' : 'http://localhost:5000/static/',
+			'STATIC_URL' : 'http://localhost:5000/static/',
 			'ambiente': 'desarrollo',
 			'nombre_app' : 'Aplicación Flask Boilerplate',
 			'cipher_key' : 's53hHaKFQoqXTDU9',

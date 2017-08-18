@@ -4,6 +4,7 @@
 import os
 from flask import Flask, request, render_template
 from flask.ext.cors import CORS, cross_origin
+from configs.helper import Helper
 from views.departamento import departamento
 from views.distrito import distrito
 from views.provincia import provincia
@@ -17,11 +18,11 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.errorhandler(404)
 def not_found(e):
-    return render_template('404.html'), 404
+    return render_template('error/404.html', helper = Helper()), 404
 
 @app.errorhandler(500)
 def server_error(e):
-    return render_template('500.html'), 500
+    return render_template('error/500.html'), 500
 
 @app.route('/')
 def index():
