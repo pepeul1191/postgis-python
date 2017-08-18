@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # app.py
-
+import os
 from flask import Flask, request, render_template
 from flask.ext.cors import CORS, cross_origin
 from views.departamento import departamento
