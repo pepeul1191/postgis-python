@@ -5,11 +5,13 @@
 from flask import Flask, request, render_template
 from flask.ext.cors import CORS, cross_origin
 from views.departamento import departamento
+from views.distrito import distrito
 from views.provincia import provincia
 
 app = Flask(__name__)
 app.register_blueprint(departamento)
 app.register_blueprint(provincia)
+app.register_blueprint(distrito)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
