@@ -24,6 +24,11 @@ Instalación de dependencias:
 	
 	$ gulp layout && gulp app && gulp error-css
 
+### Fuentes:
+
+	+ http://flask.pocoo.org/
+	+ http://exploreflask.com/en/latest/blueprints.html
+
 Thanks/Credits
 
     Pepe Valdivia: developer Software Web Perú [http://softweb.pe]
