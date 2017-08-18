@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # app.py
 
-from flask import Flask, request
+from flask import Flask, request, render_template
 from flask.ext.cors import CORS, cross_origin
 from views.departamento import departamento
 from views.provincia import provincia
@@ -31,4 +31,4 @@ def apply_caching(response):
     return response
 
 if __name__ == '__main__':
-	app.run(debug=True, host='0.0.0.0', port=5001)
+	app.run(debug=True, host='0.0.0.0', port=5000)

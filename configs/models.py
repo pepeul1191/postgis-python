@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from sqlalchemy import Table, Column, Integer, String, ForeignKey
-from config.database import Base
+from configs.database import Base
 # http://docs.sqlalchemy.org/en/latest/orm/basic_relationships.html
 class Departamento(Base):
 	__tablename__ = 'departamentos'
