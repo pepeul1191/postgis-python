@@ -5,11 +5,13 @@ import os
 from flask import Flask, request, render_template
 from flask.ext.cors import CORS, cross_origin
 from configs.helper import Helper
+from views.home import home
 from views.departamento import departamento
 from views.distrito import distrito
 from views.provincia import provincia
 
 app = Flask(__name__)
+app.register_blueprint(home)
 app.register_blueprint(departamento)
 app.register_blueprint(provincia)
 app.register_blueprint(distrito)
@@ -23,11 +25,11 @@ def not_found(e):
 @app.errorhandler(500)
 def server_error(e):
     return render_template('error/500.html'), 500
-
+'''
 @app.route('/')
 def index():
 	return 'Error : URI vacía'
-
+'''
 @app.after_request
 def apply_caching(response):
     response.headers['Server'] = 'Python; Ubuntu; Flask; Werkzeug;'
