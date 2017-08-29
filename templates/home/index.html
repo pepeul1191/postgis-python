@@ -7,4 +7,11 @@
 {% endblock %}
 {% block body %}
 	hola desde home/index.html
+	<div ng-view></div>
+{% endblock %}
+{% block js_top %}
+	<script type="text/javascript">
+		var BASE_URL = '{{helper.get("BASE_URL")}}';
+		var STATIC_URL  = '{{helper.get("STATIC_URL")}}';
+	</script>
 {% endblock %}

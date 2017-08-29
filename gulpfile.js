@@ -68,6 +68,8 @@ gulp.task('layout-js', function() {
         MEDIA + 'bower_components/jquery/dist/jquery.min.js', 
         MEDIA + 'bower_components/bootstrap/dist/js/bootstrap.min.js', 
         MEDIA + 'bower_components/angular/angular.min.js', 
+        MEDIA + 'bower_components/angular-route/angular-route.min.js', 
+        MEDIA + 'bower_components/angular-route/angular-route.min.js', 
         MEDIA + 'bower_components/handlebars/handlebars.min.js'
         ])
     .pipe(plumber())
@@ -92,13 +94,13 @@ gulp.task('home', function(){
   
   gulp.src([
     DESTINO + 'vendor.min.js', 
-    MEDIA + 'assets/home/app.js'
+    MEDIA + 'app/app.js',
+    MEDIA + 'routes/app.routes.js',
   ])
 //.pipe(uglify())
   .pipe(plumber())
   .pipe(concatJs('home.min.js'))
-  .pipe(gulp.dest(DESTINO + ''))
-  .pipe(livereload());
+  .pipe(gulp.dest(DESTINO + ''));
 });
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------

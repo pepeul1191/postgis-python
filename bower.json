@@ -31,6 +31,8 @@
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",
     "requirejs": "^2.3.4",
-    "angular": "1.6.7-build.5456+sha.3651e42"
+    "angular": "^1.6.4", 
+    "angular-route": "^1.6.4",
+    "angular-resource": "^1.6.4"
   }
 }
