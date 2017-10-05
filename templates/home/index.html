@@ -1,9 +1,9 @@
 {% extends "layouts/blank.html" %}
 {% block css %}
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="{{helper.get('STATIC_URL')}}dist/{{data['css']}}" rel="stylesheet" type="text/css">
 {% endblock %}
 {% block js %}
-	<script src="{{helper.get('STATIC_URL')}}dist/home.min.js"></script>
+	<script src="{{helper.get('STATIC_URL')}}dist/{{data['js']}}"></script>
 {% endblock %}
 {% block body %}
 	hola desde home/index.html

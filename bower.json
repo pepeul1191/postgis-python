@@ -33,6 +33,7 @@
     "requirejs": "^2.3.4",
     "angular": "^1.6.4", 
     "angular-route": "^1.6.4",
-    "angular-resource": "^1.6.4"
+    "angular-resource": "^1.6.4",
+    "swp-plugins": "*"
   }
 }

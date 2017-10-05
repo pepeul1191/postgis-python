@@ -7,7 +7,7 @@ var replace = require('gulp-replace');
 var plumber = require('gulp-plumber');
 var watch = require('gulp-watch');
 var livereload = require('gulp-livereload');
-var BASE_URL = 'http://localhost:5000/static';
+var BASE_URL = 'http://localhost:5000/static/';
 var DESTINO = 'static/dist/';
 var MEDIA = 'static/';
 
@@ -33,7 +33,7 @@ gulp.task('layout-css', function() {
       .pipe(plumber())
       .pipe(concatCss('vendor.min.css'))
       .pipe(minifyCss())
-      .pipe(replace('../../../font-awesome/fonts/', BASE_URL + 'dist//'))
+      .pipe(replace('../../../font-awesome/fonts/', BASE_URL + 'dist/'))
       .pipe(gulp.dest(DESTINO + ''));
 });
 
@@ -89,61 +89,16 @@ gulp.task('styles', function() {
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------
 
-gulp.task('home', function(){
+gulp.task('geo', function(){
   gulp.start('layout', 'styles');
   
   gulp.src([
     DESTINO + 'vendor.min.js', 
-    MEDIA + 'app/app.js',
-    MEDIA + 'routes/app.routes.js',
+    DESTINO + 'assets/swp.js',
+    MEDIA + 'assets/geo.js',
   ])
 //.pipe(uglify())
   .pipe(plumber())
-  .pipe(concatJs('home.min.js'))
+  .pipe(concatJs('geo.min.js'))
   .pipe(gulp.dest(DESTINO + ''));
 });
-
-// ---------------------------------------------------------------------------------------------------------------------------------------------
-
-
-gulp.task('login', function(){
-  gulp.start('layout', 'styles');
-  
-   gulp.src([DESTINO + 'styles.min.css', MEDIA + 'assets/login/index.css'])
-     .pipe(plumber())
-     .pipe(concatCss('login.min.css'))
-    // .pipe(minifyCss())
-     .pipe(gulp.dest(DESTINO + ''));
-});
-
-// ---------------------------------------------------------------------------------------------------------------------------------------------
-
-gulp.task('mantenimiento', function(){
-  gulp.start('fonts', 'layout-css', 'layout-js', 'swp-plugins', 'styles');
-  
-  gulp.src([
-    DESTINO + 'assets/vendor.min.js', 
-    DESTINO + 'assets/swp.js',
-    MEDIA + 'layouts/mantenimiento.js', 
-    MEDIA + 'views/usuario.js', 
-    MEDIA + 'views/_table_sistema.js', 
-    MEDIA + 'views/_table_menu.js', 
-    MEDIA + 'views/_table_permiso.js', 
-    MEDIA + 'views/_table_rol.js', 
-    MEDIA + 'views/sistema.js', 
-    MEDIA + 'views/menu.js', 
-    MEDIA + 'views/permiso.js', 
-    MEDIA + 'views/rol.js', 
-    MEDIA + 'routes/router.js'])
-//.pipe(uglify())
-  .pipe(plumber())
-  .pipe(concatJs('mantenimiento.min.js'))
-  .pipe(gulp.dest(DESTINO + ''))
-  .pipe(livereload());
-  
-  gulp.src([DESTINO + 'styles.min.css', DESTINO + 'swp.css'])
-  .pipe(plumber())
-  .pipe(concatCss('mantenimiento.min.css'))
-  .pipe(gulp.dest(DESTINO + ''));
-});
-

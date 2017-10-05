@@ -9,4 +9,5 @@ home = Blueprint('index', __name__)
 
 @home.route('/', methods=['GET'])
 def index():
-    return render_template('home/index.html', helper = Helper()), 200
+	data = {'css' : 'vendor.min.css', 'js' : 'geo.min.js'} 
+	return render_template('home/index.html', helper = Helper(), data = data), 200
