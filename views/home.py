@@ -11,3 +11,11 @@ home = Blueprint('index', __name__)
 def index():
 	data = {'css' : 'vendor.min.css', 'js' : 'geo.min.js'} 
 	return render_template('home/index.html', helper = Helper(), data = data), 200
+
+
+@home.route('/subir', methods=['POST'])
+def subir():
+	file = request.files['myFile']
+	file.save('/home/pepe/Descargas/flaskupload/Distritos_Expuestos.shp')
+
+	return 'subir'

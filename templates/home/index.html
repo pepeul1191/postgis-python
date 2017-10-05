@@ -7,7 +7,19 @@
 {% endblock %}
 {% block body %}
 	hola desde home/index.html
-	<div ng-view></div>
+	<div class="col-md-12">
+		<div class="row">
+		<label class="texto-der" id="txtMensajeRptaImagenes"></label>
+			<div class="col-md-12">
+			    <label class="control-label">DNI</label><label id="imagen_dni_id" class="oculto"></label>
+				<input type="file" id="input_file_dni" name="myFile" type="file" class=""/>
+			</div>
+			<div class="col-md-12" style="margin-top: 10px">
+				<button id="upload_file_dni" class="btn btn-app pull-left"><i class="fa fa-upload" aria-hidden="true" style="margin-right:5px"></i>Subir Archivo</button>
+				<progress id="progbar_dni" value="0" min="0" max="100" class="oculto" role=""></progress>
+			</div>
+		</div>
+	</div>
 {% endblock %}
 {% block js_top %}
 	<script type="text/javascript">

@@ -67,9 +67,6 @@ gulp.task('layout-js', function() {
     gulp.src([
         MEDIA + 'bower_components/jquery/dist/jquery.min.js', 
         MEDIA + 'bower_components/bootstrap/dist/js/bootstrap.min.js', 
-        MEDIA + 'bower_components/angular/angular.min.js', 
-        MEDIA + 'bower_components/angular-route/angular-route.min.js', 
-        MEDIA + 'bower_components/angular-route/angular-route.min.js', 
         MEDIA + 'bower_components/handlebars/handlebars.min.js'
         ])
     .pipe(plumber())
@@ -94,7 +91,7 @@ gulp.task('geo', function(){
   
   gulp.src([
     DESTINO + 'vendor.min.js', 
-    DESTINO + 'assets/swp.js',
+    DESTINO + 'swp.js',
     MEDIA + 'assets/geo.js',
   ])
 //.pipe(uglify())
